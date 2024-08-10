@@ -1,0 +1,12 @@
+#top-nav {
+  padding-top: env(
+    safe-area-inset-top
+  ); /* This ensures the navbar extends into the safe area */
+  z-index: 1000; /* Ensure it stays above other content */
+}
+
+#content {
+  padding-top: calc(
+    60px + env(safe-area-inset-top)
+  ); /* Adjust content to be below the navbar */
+}
