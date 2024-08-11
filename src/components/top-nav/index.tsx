@@ -18,9 +18,9 @@ export function TopNav() {
   const { theme, setTheme } = useTheme();
   return (
     <nav className="flex w-full h-full justify-between px-8 items-center">
-      <TopNavButton variant="home" />
-      <TopNavButton variant="explore" />
-      <TopNavButton variant="create" />
+      <TopNavButton to="/" variant="home" />
+      <TopNavButton to="/explore" variant="explore" />
+      <TopNavButton to="/create" variant="create" />
       <DropdownMenu>
         <DropdownMenuTrigger className="outline-none">
           <Avatar className="size-8 hover:cursor-pointer stroke-2 border-primary border-2">

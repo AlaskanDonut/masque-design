@@ -7,6 +7,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ThemeVisualizer } from "@/pages/theme-visualizer";
 import { Profile } from "@/pages/profile";
 import { Home } from "@/pages/home.tsx";
+import { Explore } from "@/pages/explore/index.tsx";
+import { Create } from "@/pages/create/index.tsx";
 
 export const router = createBrowserRouter([
   {
@@ -16,6 +18,14 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "explore",
+        element: <Explore />,
+      },
+      {
+        path: "create",
+        element: <Create />,
       },
       {
         path: "theme",
