@@ -9,6 +9,7 @@ import { Profile } from "@/pages/profile";
 import { Home } from "@/pages/home.tsx";
 import { Explore } from "@/pages/explore/index.tsx";
 import { Create } from "@/pages/create/index.tsx";
+import { Messages } from "@/pages/messages/index.tsx";
 
 export const router = createBrowserRouter([
   {
@@ -28,12 +29,16 @@ export const router = createBrowserRouter([
         element: <Create />,
       },
       {
-        path: "theme",
-        element: <ThemeVisualizer />,
+        path: "messages",
+        element: <Messages />,
       },
       {
         path: "profile",
         element: <Profile />,
+      },
+      {
+        path: "theme",
+        element: <ThemeVisualizer />,
       },
     ],
   },

@@ -9,12 +9,13 @@ import {
 } from "@/components/ui/dropdown-menu";
 import TopNavButton from "./button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useTheme } from "../providers/theme-provider";
 
 const MenuItemStyle = "px-5 py-3";
 
 export function TopNav() {
+  const navigate = useNavigate();
   const { theme, setTheme } = useTheme();
   return (
     <nav className="flex w-full h-full justify-between px-8 items-center">
@@ -29,10 +30,16 @@ export function TopNav() {
           </Avatar>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="mx-5 my-5 p-5 border-primary text-secondary-foreground">
-          <DropdownMenuItem className={MenuItemStyle}>
-            <Link to="/profile">Profile</Link>
+          <DropdownMenuItem
+            className={MenuItemStyle}
+            onClick={() => navigate("/profile")}
+          >
+            Profile
           </DropdownMenuItem>
-          <DropdownMenuItem className={MenuItemStyle}>
+          <DropdownMenuItem
+            className={MenuItemStyle}
+            onClick={() => navigate("/messages")}
+          >
             Messages
           </DropdownMenuItem>
           <DropdownMenuItem className={MenuItemStyle}>
