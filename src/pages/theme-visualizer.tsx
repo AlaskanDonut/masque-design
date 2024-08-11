@@ -1,7 +1,7 @@
 import { ChevronRight, Link, Loader2, Mail } from "lucide-react";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "./ui/label";
+import { Label } from "@/components/ui/label";
 import {
   Card,
   CardContent,
@@ -20,7 +20,7 @@ import {
 
 export function ThemeVisualizer() {
   return (
-    <div className="flex flex-col space-y-5">
+    <div className="flex flex-col space-y-5 py-7">
       <div className="flex flex-wrap gap-4">
         <div className="h-16 w-16 bg-background flex items-center justify-center text-gray-500 text-xs">
           background

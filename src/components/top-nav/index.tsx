@@ -6,20 +6,22 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "../ui/dropdown-menu";
+} from "@/components/ui/dropdown-menu";
 import TopNavButton from "./button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Link, NavLink } from "react-router-dom";
+import { ThemeProvider, useTheme } from "../providers/theme-provider";
 
 const MenuItemStyle = "px-5 py-3";
 
 export function TopNav() {
+  const { theme, setTheme } = useTheme();
   return (
     <nav className="flex w-full h-full justify-between px-8 items-center">
       <ModeToggle />
       <TopNavButton variant="home" />
       <TopNavButton variant="explore" />
       <TopNavButton variant="create" />
-
       <DropdownMenu>
         <DropdownMenuTrigger className="outline-none">
           {" "}
@@ -28,17 +30,22 @@ export function TopNav() {
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="mx-5 my-5 p-5 border-primary text-primary">
-          {/* <DropdownMenuLabel>My Account</DropdownMenuLabel>
-          <DropdownMenuSeparator /> */}
-          <DropdownMenuItem className={MenuItemStyle}>Profile</DropdownMenuItem>
+        <DropdownMenuContent className="mx-5 my-5 p-5 border-primary text-secondary-foreground">
+          <DropdownMenuItem className={MenuItemStyle}>
+            <Link to="/profile">Profile</Link>
+          </DropdownMenuItem>
           <DropdownMenuItem className={MenuItemStyle}>
             Messages
           </DropdownMenuItem>
           <DropdownMenuItem className={MenuItemStyle}>
             Subscriptions
           </DropdownMenuItem>
-          <DropdownMenuItem className={MenuItemStyle}>Display</DropdownMenuItem>
+          <DropdownMenuItem
+            className={MenuItemStyle}
+            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+          >
+            {theme === "light" ? "Dark Mode" : "Light Mode"}
+          </DropdownMenuItem>
           <DropdownMenuItem className={MenuItemStyle}>
             Settings
           </DropdownMenuItem>

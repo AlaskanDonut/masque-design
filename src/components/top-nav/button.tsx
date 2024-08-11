@@ -8,7 +8,7 @@ export default function TopNavButton({
   selection?: boolean;
 }) {
   return (
-    <button className="px-4 py-2 text-primary">
+    <button className="px-4 py-2 text-secondary-foreground">
       <svg
         width="24"
         height="24"
